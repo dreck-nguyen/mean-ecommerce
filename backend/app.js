@@ -7,7 +7,7 @@ require('dotenv').config()
 // require('dotenv/config')
 
 //Database Name
-const dbMain = 'eshop-database'
+let dbMain = 'eshop-database'
 dbMain = 'mean-shop'
 const dbNameStr = dbMain;
 
