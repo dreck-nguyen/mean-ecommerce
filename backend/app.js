@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const productsRouter = require('./routers/products')
 
 require('dotenv').config()
 // require('dotenv/config')
