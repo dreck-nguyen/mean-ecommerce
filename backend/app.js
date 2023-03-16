@@ -3,7 +3,6 @@ const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const productsRouter = require('./routers/products')
-const api = process.env.API_URL
 
 require('dotenv').config()
 // require('dotenv/config')
@@ -16,8 +15,18 @@ const dbNameStr = dbTest;
 app.use(express.json())
 app.use(morgan('tiny'))
 
-// Routers
-app.use(`${api}/products`, productsRouter)
+//Routes
+const categoriesRoutes = require('./routes/categories');
+const productsRoutes = require('./routes/products');
+const usersRoutes = require('./routes/users');
+const ordersRoutes = require('./routes/orders');
+
+const api = process.env.API_URL;
+
+app.use(`${api}/categories`, categoriesRoutes);
+app.use(`${api}/products`, productsRoutes);
+app.use(`${api}/users`, usersRoutes);
+app.use(`${api}/orders`, ordersRoutes);
 
 //MongoDb Connection
 mongoose.connect(process.env.CONNECTION_STRING, {
