@@ -6,9 +6,10 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 // require('dotenv/config')
 
-// const dbMain = 'eshop-database'
-const dbTest = 'mean-shop'
-const dbNameStr = dbTest;
+//Database Name
+const dbMain = 'eshop-database'
+dbMain = 'mean-shop'
+const dbNameStr = dbMain;
 
 // Middleware
 app.use(express.json())
